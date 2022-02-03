@@ -7,19 +7,25 @@ const Statystics = ({
   positivePercentage,
 }) => {
   return (
-    <>
-      <StatysticCounter>
-        <h2>{title}</h2>
-        {optionsWithValues.map((el) => (
-          <StatysticItem key={el}>
-            {el[0]}: {el[1]}
+    <StatysticCounter>
+      <h2>{title}</h2>
+      {total > 0 ? (
+        <>
+          {optionsWithValues.map((el) => (
+            <StatysticItem key={el}>
+              {el[0]}: {el[1]}
+            </StatysticItem>
+          ))}
+          <StatysticItem>Totat: {total}</StatysticItem>
+          <StatysticItem>
+            Positive feedback: {positivePercentage}%
           </StatysticItem>
-        ))}
-        <StatysticItem>Totat: {total}</StatysticItem>
-        <StatysticItem>Positive feedback: {positivePercentage}%</StatysticItem>
-      </StatysticCounter>
-    </>
+        </>
+      ) : (
+        <p>No feedback given</p>
+      )}
+    </StatysticCounter>
   )
 }
- 
-export default Statystics;
+
+export default Statystics

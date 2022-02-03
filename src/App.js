@@ -6,9 +6,9 @@ import Statystics from "./components/Statystics/Statystics"
 
 class App extends Component {
   state = {
-    good: 3,
-    neutral: 2,
-    bad: 2,
+    good: 0,
+    neutral: 0,
+    bad: 0,
   }
 
   countTotalFeedback = () => {
@@ -40,6 +40,7 @@ class App extends Component {
             options={Object.keys(this.state)}
             counterFeedbacks={this.counterFeedbacks}
           />
+
           <Statystics
             title={"Statystics"}
             optionsWithValues={Object.entries(this.state)}
