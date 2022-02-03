@@ -1,4 +1,6 @@
-const Section = ({title, children}) => {
+import PropTypes from 'prop-types';
+
+const Section = ({ title, children }) => {
   return (
     <section>{title}
       <h1>
@@ -6,6 +8,11 @@ const Section = ({title, children}) => {
       </h1>
     </section>
   )
+}
+
+Section.prototype = {
+  title: PropTypes.string,
+  children: PropTypes.node
 }
  
 export default Section;

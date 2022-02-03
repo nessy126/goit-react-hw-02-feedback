@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   ButtonsConteiner,
   Button,
@@ -21,6 +23,11 @@ const FeedbackOptions = ({options =[], counterFeedbacks}) => {
       </ButtonsConteiner>
     </MainConteiner>
   )
+}
+
+FeedbackOptions.prototype = {
+  options: PropTypes.array.isRequired,
+  counterFeedbacks: PropTypes.func.isRequired
 }
  
 export default FeedbackOptions;

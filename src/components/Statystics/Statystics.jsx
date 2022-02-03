@@ -1,4 +1,5 @@
 import { StatysticCounter, StatysticItem } from "./Statystics.styled"
+import PropTypes from 'prop-types';
 
 const Statystics = ({
   title,
@@ -26,6 +27,13 @@ const Statystics = ({
       )}
     </StatysticCounter>
   )
+}
+
+Statystics.prototype = {
+  title: PropTypes.string.isRequired,
+  optionsWithValues: PropTypes.array.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired
 }
 
 export default Statystics
