@@ -1,13 +1,22 @@
 import { StatysticCounter, StatysticItem } from "./Statystics.styled"
 
-const Statystics = ({ good, neutral , bad}) => {
+const Statystics = ({
+  title,
+  optionsWithValues,
+  total,
+  positivePercentage,
+}) => {
   return (
     <>
-      <h2>Statystics</h2>
       <StatysticCounter>
-        <StatysticItem>Good: {good}</StatysticItem>
-        <StatysticItem>Neutral: {neutral}</StatysticItem>
-        <StatysticItem>Bad: {bad}</StatysticItem>
+        <h2>{title}</h2>
+        {optionsWithValues.map((el) => (
+          <StatysticItem key={el}>
+            {el[0]}: {el[1]}
+          </StatysticItem>
+        ))}
+        <StatysticItem>Totat: {total}</StatysticItem>
+        <StatysticItem>Positive feedback: {positivePercentage}%</StatysticItem>
       </StatysticCounter>
     </>
   )

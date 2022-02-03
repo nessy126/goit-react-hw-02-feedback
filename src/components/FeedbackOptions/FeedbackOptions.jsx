@@ -4,14 +4,20 @@ import {
   MainConteiner,
 } from "./FeedbackOptions.styled"
 
-const FeedbackOptions = () => {
+const FeedbackOptions = ({options =[], counterFeedbacks}) => {
   return (
     <MainConteiner>
-      <h2>Please leave feedback</h2>
       <ButtonsConteiner>
-        <Button type="button">Good</Button>
-        <Button type="button">Neutral</Button>
-        <Button type="button">Bad</Button>
+        {options.map((el) => (
+          <Button
+            onClick={(e) => counterFeedbacks(el)}
+            type="button"
+            key={el}
+            name={el}
+          >
+            {el}
+          </Button>
+        ))}
       </ButtonsConteiner>
     </MainConteiner>
   )

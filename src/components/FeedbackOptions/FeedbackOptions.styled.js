@@ -22,5 +22,5 @@ export const Button = styled.button`
   border-radius: 5px;
   background-color: #fff;
   border: 1px solid grey;
-  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, .5);
 `
